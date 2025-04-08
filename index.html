@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elevate UIC</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap 5 CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* Color Palette */
+    :root {
+      --dark-blue: #203d64;
+      --sky-blue: #8FBFDA;
+      --red: #CB0B2D;
+      --white: #FFFEFB;
+      --light-gray: #BBBABA;
+      --black: #101010;
+      --heading-font: 'Montserrat', sans-serif;
+      --body-font: 'Quicksand', sans-serif;
+      --section-padding: 80px 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--body-font);
+      background-color: var(--white);
+      color: var(--black);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--heading-font);
+      font-weight: 700;
+    }
+
+    section {
+      padding: var(--section-padding);
+    }
+
+    .btn {
+      border-radius: 30px;
+      padding: 12px 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--red);
+      border-color: var(--red);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background-color: #a00924;
+      border-color: #a00924;
+    }
+
+    /* Navigation */
+    .navbar {
+      background-color: var(--dark-blue);
+      padding: 20px 0;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-family: var(--heading-font);
+      font-size: 1.8rem;
+      color: var(--white) !important;
+    }
+
+    .nav-link {
+      color: var(--white) !important;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      margin: 0 15px;
+    }
+
+    .nav-link:hover {
+      color: var(--sky-blue) !important;
+    }
+
+    /* Hero Section */
+    .hero {
+        position: relative;
+        width: 100%;
+        min-height: 70vh;
+        background: linear-gradient(
+            rgba(32, 61, 100, 0.7),
+            rgba(32, 61, 100, 0.7)
+            ),
+            url('Screenshot 2025-04-07 at 4.38.09 PM.png') center center / cover no-repeat;
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 80px 0;
+        }
+
+
+
+    .hero h1 {
+      font-family: var(--heading-font);
+      font-weight: 700;
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      font-size: 1.3rem;
+    }
+
+    .hero .btn-hero {
+      background-color: var(--red);
+      color: var(--white);
+      border: none;
+      border-radius: 30px;
+      padding: 15px 35px;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .hero .btn-hero:hover {
+      background-color: #a00924;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Section Titles */
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title {
+      font-family: var(--heading-font);
+      color: var(--dark-blue);
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 3px;
+      background-color: var(--red);
+    }
+
+    .section-subtitle {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 25px auto 0;
+    }
+
+    /* About Section */
+    #about {
+      padding-top: 100px;
+    }
+
+    .about-image {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+
+    .mission-text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .pillar-title {
+      color: var(--dark-blue);
+      font-weight: 700;
+      margin-bottom: 25px;
+      font-size: 1.4rem;
+    }
+
+    .pillar-card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      padding: 25px;
+      margin-bottom: 25px;
+      transition: all 0.3s ease;
+      border-left: 4px solid var(--red);
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .pillar-card h4 {
+      color: var(--dark-blue);
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .pillar-card p {
+      margin-bottom: 0;
+      color: #555;
+    }
+
+    /* Team Section */
+    #team {
+      background-color: #f9f9f9;
+    }
+
+    .team-category {
+      margin-top: 60px;
+      margin-bottom: 40px;
+    }
+
+    .team-title {
+      font-size: 2rem;
+      color: var(--dark-blue);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .bio-card {
+      background-color: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .bio-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .bio-card img {
+        width: 100%;
+        height: 500; /* Increase this value from 250px to something larger */
+        object-fit: cover;
+        display: block;
+        margin: 0;
+        padding: 0;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        }
+
+
+
+
+    .bio-card .content {
+      padding: 25px;
+    }
+
+    .bio-card h4 {
+      color: var(--red);
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .bio-card h5 {
+      font-weight: 600;
+      color: var(--dark-blue);
+      margin-bottom: 15px;
+    }
+
+    .bio-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* Platform Section */
+    .platform-item {
+      margin-bottom: 70px;
+    }
+
+    .platform-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .platform-content {
+      padding: 20px 0;
+    }
+
+    .platform-title {
+      font-family: var(--heading-font);
+      font-size: 1.8rem;
+      color: var(--dark-blue);
+      margin-bottom: 20px;
+      position: relative;
+      padding-left: 20px;
+      border-left: 4px solid var(--red);
+    }
+
+    .platform-description {
+      font-size: 1.05rem;
+      color: #555;
+      margin-bottom: 20px;
+      text-align: center; /* center the text for a better middle design */
+    }
+
+    .initiative-item {
+      margin-bottom: 15px;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .initiative-item:before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--red);
+      font-weight: bold;
+    }
+
+    .initiative-item strong {
+      color: var(--dark-blue);
+      font-weight: 600;
+    }
+
+    /* Contact / Footer */
+    #contact {
+      background-color: var(--black);
+      color: var(--white);
+      padding: 60px 0;
+    }
+
+    .contact-container {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-title {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .social-link {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--dark-blue);
+      color: var(--white);
+      border-radius: 50%;
+      margin: 0 10px;
+      font-size: 1.3rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background-color: var(--red);
+      transform: translateY(-5px);
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--red);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      z-index: 99;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .back-to-top:hover {
+      background-color: var(--dark-blue);
+      transform: translateY(-5px);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+
+      .section-title {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .bio-card img {
+        height: 220px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Elevate UIC</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#team">Meet the Team</a></li>
+          <li class="nav-item"><a class="nav-link" href="#platform">Platform</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Vote Elevate UIC</h1>
+      <p>Forging your future with action today!</p>
+      <a href="#platform" class="btn btn-hero">Explore Our Platform</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">About Elevate UIC</h2>
+        <p class="section-subtitle">
+          Working together to create a stronger, more inclusive university
+          experience.
+        </p>
+      </div>
+
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-5 mb-lg-0">
+          <img
+            src="Screenshot 2025-04-07 at 3.47.54 PM.png"
+            alt="About Elevate UIC"
+            class="about-image"
+          />
+        </div>
+
+        <div class="col-lg-7">
+          <div class="mission-text">
+            <p>
+              At Elevate UIC, our mission is to uplift the voices of all
+              students, promote equity and transparency, and improve the
+              academic, professional, and social experience at the University
+              of Illinois Chicago. We aim to create a safer, more inclusive,
+              and engaging campus environment while supporting student
+              organizations and advocating for financial accessibility and
+              student well-being.
+            </p>
+          </div>
+
+          <h3 class="pillar-title">Our Core Pillars</h3>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="pillar-card">
+                <h4>Protecting Student Safety & Wellness</h4>
+                <p>
+                  From campus safety to mental health resources, we ensure that
+                  every student's fundamental needs are met.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="pillar-card">
+                <h4>Forging Student Success</h4>
+                <p>
+                  We focus on expanding academic support, professional
+                  development, and inclusive advising services.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="pillar-card">
+                <h4>Strengthen Our UIC Community</h4>
+                <p>
+                  We strive to bolster student organizations, encourage athletic
+                  attendance, and foster campus pride.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="pillar-card">
+                <h4>Elevating Campus Life</h4>
+                <p>
+                    Through spirited events, stronger student org support, and revitalized spaces, we’re building a more vibrant and connected UIC community.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Meet the Team</h2>
+        <p class="section-subtitle">
+          Get to know the dedicated students working to improve your university
+          experience.
+        </p>
+      </div>
+
+      <!-- Executive Board -->
+      <div class="team-category">
+        <h3 class="team-title">USG Executive Board</h3>
+        <div class="row">
+          <!-- President: Nathan -->
+          <div class="col-lg-4 col-md-6">
+            <div class="bio-card">
+              <img
+                src="Nathan.png"
+                alt="Nathan Photo"
+              />
+              <div class="content">
+                <h4>USG President</h4>
+                <h5>Nathan Thokkudubiyyapu</h5>
+                <p>
+                  Nathan is a sophomore Computer Science major from Elmhurst,
+                  Illinois, committed to elevating the student experience for
+                  every Flame. He currently serves as the Director of Student
+                  Success in the Undergraduate Student Government, a Student
+                  Senator on the UIC Senate, and Vice President of Professional
+                  Development for Alpha Kappa Psi. Nathan focuses on addressing
+                  academic concerns, improving access to professional
+                  development, and advocating for open educational resources.
+                  Outside of academics, Nathan enjoys exploring the city,
+                  playing spikeball, and building initiatives that leave a
+                  lasting impact on campus.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- VP: Dilay -->
+          <div class="col-lg-4 col-md-6">
+            <div class="bio-card">
+              <img
+                src="Dilay.png"
+                alt="Dilay Photo"
+              />
+              <div class="content">
+                <h4>USG Vice President</h4>
+                <h5>Dilay Heybeli</h5>
+                <p>
+                  Dilay is an international student from Turkey pursuing a major
+                  in Industrial Engineering at UIC. She currently serves as the
+                  Director of Diversity and Inclusion in the Undergraduate
+                  Student Government. Dilay focuses on igniting UIC’s campus
+                  culture and fostering connections within the student body. Fun
+                  fact: Dilay volunteered as a kindergarten teacher in 2
+                  different countries this past year and loves to solo travel!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trustee: Quinn -->
+          <div class="col-lg-4 col-md-6">
+            <div class="bio-card">
+              <img
+                src="Quinn.png"
+                alt="Quinn Photo"
+              />
+              <div class="content">
+                <h4>Student Trustee</h4>
+                <h5>Quinn Basta</h5>
+                <p>
+                  Quinn is a Chicago native pursuing a major in Finance at UIC.
+                  On campus, he is a Business Scholar and President of the
+                  Portfolio Management Team, as well as Chief of Staff of the
+                  Undergraduate Student Government. Quinn hopes to be UIC’s next
+                  Student Trustee to continue advocating for student experience,
+                  campus safety, mental health, and more professional
+                  development opportunities. For fun, Quinn loves spending time
+                  with his dog and playing baseball and golf with friends!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Example snippet with the updated <img src="Headshots/..." references -->
+
+<!-- USG Representatives -->
+<div class="team-category">
+    <h3 class="team-title">USG Representatives</h3>
+    <div class="row">
+      <!-- Allie -->
+      <div class="col-lg-4 col-md-6">
+        <div class="bio-card">
+          <img
+            src="Screenshot 2025-04-07 at 4.49.52 PM.png"
+            alt="Allie Photo"
+          />
+          <div class="content">
+            <h4>Representative</h4>
+            <h5>Alissar "Allie" Salem</h5>
+            <p>
+              Allie is a first-year Criminology, Law, and Justice and
+              International Studies major on the pre-law track. As a current
+              student representative, she advocates for inclusivity and
+              student success. She's passionate about amplifying diverse
+              voices and global awareness. She’s an Illinois Global Scholar
+              and GPPA Law student. She enjoys working out, traveling, and
+              spending time with friends.
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Mehdi -->
+      <div class="col-lg-4 col-md-6">
+        <div class="bio-card">
+          <img
+            src="Screenshot 2025-04-07 at 4.50.27 PM.png" alt="Mehdi Photo" 
+
+          />
+          <div class="content">
+            <h4>Representative</h4>
+            <h5>Mehdi</h5>
+            <p>
+              Mehdi is a sophomore studying Information and Decision
+              Sciences and Finance. He aims to create an inclusive
+              environment by enhancing career development and networking
+              opportunities for students. As Recruitment Chair of Tau
+              Kappa Epsilon, he brings leadership experience and a passion
+              for community. He enjoys weightlifting, discovering music,
+              and exploring Chicago.
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Kamran -->
+      <div class="col-lg-4 col-md-6">
+        <div class="bio-card">
+          <img
+            src="Kamran.jpeg"
+            alt="Kamran Photo"
+          />
+          <div class="content">
+            <h4>Representative</h4>
+            <h5>Kamran Shafi</h5>
+            <p>
+              Kamran is a freshman Management major with a passion for
+              leadership and event planning. He wants to enrich campus
+              life through more engaging events and better support for
+              commuter students. Kamran currently serves as Director of
+              Administrative Affairs for Light The Way and is a Campus
+              Ambassador for the Chicago White Sox. He enjoys watching
+              sports and exploring the city.
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Ohik -->
+      <div class="col-lg-4 col-md-6">
+        <div class="bio-card">
+          <img
+            src="Screenshot 2025-04-08 at 4.37.21 AM.png"
+            alt="Ohik Photo"
+          />
+          <div class="content">
+            <h4>Representative</h4>
+            <h5>Ohik Kwon</h5>
+            <p>
+              Ohik is a second-year Biology major on the pre-dental track
+              and a returning member of USG. He advocates for mentorship
+              and career development, particularly in support of students'
+              academic and professional goals. He is involved in the
+              Korean American Student Association, Pre-Dental Club, and is
+              a future Honors College Peer Mentor. He enjoys volunteering
+              and trying new restaurants around Chicago.
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Aya -->
+      <div class="col-lg-4 col-md-6">
+        <div class="bio-card">
+          <img
+            src="Aya.png"
+            alt="Aya Photo"
+          />
+          <div class="content">
+            <h4>Representative</h4>
+            <h5>Aya Belhandouz</h5>
+            <p>
+              Aya is a first-year Neuroscience major on the pre-med track.
+              She focuses on improving tutoring and research resources,
+              especially for first-year and transfer students. She is
+              active in MSA, SFP, and is a research assistant in an
+              oncology lab. Aya enjoys playing badminton, baking, and
+              spending time with loved ones.
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Anvi -->
+      <div class="col-lg-4 col-md-6">
+        <div class="bio-card">
+          <img
+            src="Anvi.png"
+            alt="Anvi Photo"
+          />
+          <div class="content">
+            <h4>Representative</h4>
+            <h5>Anvi Shevade</h5>
+            <p>
+              Anvi is a first-year Integrated Health Studies student with
+              aspirations of becoming a physician. As a USG Representative,
+              she is passionate about making sure student voices directly
+              influence meaningful change. Anvi is focused on expanding
+              access to academic and social resources, and she’s committed
+              to addressing campus concerns through thoughtful legislation
+              and advocacy.
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Safa -->
+      <div class="col-lg-4 col-md-6">
+        <div class="bio-card">
+          <img
+            src="Screenshot 2025-04-07 at 4.47.52 PM.png"
+            alt="Safa Photo"
+          />
+          <div class="content">
+            <h4>Representative</h4>
+            <h5>Safa Fathima</h5>
+            <p>
+              Safa is a first-year Neuroscience student minoring in
+              Political Science, with aspirations of becoming a physician.
+              As a USG Representative, she is committed to embedding the
+              values of advocacy and service in her work. Safa is
+              passionate about increasing transparency, amplifying
+              overlooked concerns, and driving initiatives that improve
+              student health and campus safety.
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Iessa -->
+      <div class="col-lg-4 col-md-6">
+        <div class="bio-card">
+          <img
+            src="Screenshot 2025-04-07 at 4.46.44 PM.png"
+            alt="Iessa Photo"
+          />
+          <div class="content">
+            <h4>Representative</h4>
+            <h5>Iessa</h5>
+            <p>
+                Iessa is a junior majoring in Information and Decision Sciences with a minor in Economics. As an international student passionate about data analytics, business strategy, and student advocacy, he aims to strengthen the connection between students and administration. Iessa is especially focused on improving access to resources for first-generation and international students through mentorship, tailored workshops, and better support systems. Outside of academics, he enjoys working out, exploring the city, and keeping up with the latest in tech and the automotive world.
+
+            </p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Artur -->
+      <div class="col-lg-4 col-md-6">
+        <div class="bio-card">
+          <img
+            src="Screenshot 2025-04-07 at 4.48.34 PM.png"
+            alt="Artur Photo"
+          />
+          <div class="content">
+            <h4>Representative</h4>
+            <h5>Artur</h5>
+            <p>
+                Artur Vlasenko is an international student from Ukraine majoring in Finance. He believes that every student should have the chance to grow, push their limits, and take full advantage of everything college has to offer. Artur is committed to making valuable opportunities accessible—whether in undergraduate research, sports, on-campus employment, or extracurricular activities. He firmly believes that opportunity should always meet ambition.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+      <!-- USG Senators -->
+      <div class="team-category">
+        <h3 class="team-title">USG Senators</h3>
+        <div class="row">
+          <!-- Ruqaya -->
+          <div class="col-lg-4 col-md-6">
+            <div class="bio-card">
+              <img
+                src="Screenshot 2025-04-07 at 4.44.49 PM.png"
+                alt="Ruqaya Photo"
+              />
+              <div class="content">
+                <h4>Senator</h4>
+                <h5>Ruqaya Ogaili</h5>
+                <p>
+                  Ruqaya is a junior Political Science major and transfer
+                  student pursuing a career in immigration and family law. She
+                  is passionate about expanding student resources and ensuring
+                  student voices are heard. She serves as Executive Director of
+                  the Student Political Engagement Network. She enjoys music,
+                  art, and staying up to date with current events.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hope -->
+          <div class="col-lg-4 col-md-6">
+            <div class="bio-card">
+              <img
+                src="Screenshot 2025-04-08 at 4.38.53 AM.png"
+                alt="Hope Photo"
+              />
+              <div class="content">
+                <h4>Senator</h4>
+                <h5>Hope Davis</h5>
+                <p>
+                  Hope is a second-year Political Science major with a minor in
+                  Public Policy. She co-founded the Student Political Engagement
+                  Network and hosts a radio show exploring the history of rock
+                  music. Passionate about civic engagement and student
+                  involvement, she loves vintage shopping, trying new
+                  restaurants, and attending live music events.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ian -->
+          <div class="col-lg-4 col-md-6">
+            <div class="bio-card">
+              <img
+                src="Screenshot 2025-04-07 at 4.45.27 PM.png"
+                alt="Ian Photo"
+              />
+              <div class="content">
+                <h4>Senator</h4>
+                <h5>Ian Hunt</h5>
+                <p>
+                  Ian is a junior Political Science major with a minor in
+                  Economics. As a transfer student, he understands the
+                  challenges of campus integration and aims to improve access to
+                  student resources. He is a member of the Student Political
+                  Engagement Network and passionate about ensuring events and
+                  services are truly student-centered. He enjoys rock climbing,
+                  hiking, skiing, and immersing himself in soccer culture.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Platform Section -->
+  <section id="platform">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Platform</h2>
+        <p class="section-subtitle">
+          Our comprehensive plan to improve student life at UIC.
+        </p>
+      </div>
+
+      <!-- Reducing Your Costs -->
+      <div class="platform-item row">
+        <div class="col-lg-5">
+          <img
+            src="one.jpeg"
+            alt="Reducing Your Costs"
+            class="platform-image"
+          />
+        </div>
+        <div class="col-lg-7 d-flex flex-column justify-content-center">
+          <div class="platform-content">
+            <h3 class="platform-title">Reducing Your Costs</h3>
+            <p class="platform-description">
+              Student-focused review on reducing the cost of higher education at UIC
+            </p>
+            <ul class="list-unstyled">
+              <li class="initiative-item">
+                <strong>Comprehensive task force:</strong> Establish a task force
+                to review UIC’s financial practices and ensure accountability in
+                tuition and fee use.
+              </li>
+              <li class="initiative-item">
+                <strong>Better advising:</strong> Improve our financial aid/loan
+                advising to work for all students.
+              </li>
+              <li class="initiative-item">
+                <strong>State support:</strong> Advocate for increased state
+                financial support for UIC students.
+              </li>
+              <li class="initiative-item">
+                <strong>Free textbooks:</strong> Champion open educational
+                resources (OER) to expand access to free or low-cost textbooks.
+              </li>
+              <li class="initiative-item">
+                <strong>CTA & Metra U-Pass+:</strong> Work toward permanently
+                establishing the U-Pass+ at UIC, reducing commuting costs and
+                improving transit accessibility.
+              </li>
+              <li class="initiative-item">
+                <strong>UIC student discounts:</strong> Launch a centralized
+                discount guide, connecting students with deals across the city.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Protecting Student Safety & Wellness -->
+      <div class="platform-item row">
+        <div class="col-lg-5 order-lg-2">
+          <img
+            src="five.jpg"
+            alt="Protecting Student Safety & Wellness"
+            class="platform-image"
+          />
+        </div>
+        <div class="col-lg-7 d-flex flex-column justify-content-center order-lg-1">
+          <div class="platform-content">
+            <h3 class="platform-title">Protecting Student Safety & Wellness</h3>
+            <p class="platform-description">
+              Creating a secure and healthy campus environment for every student
+            </p>
+            <ul class="list-unstyled">
+              <li class="initiative-item">
+                <strong>Review & improve safety:</strong> Utilize the Campus
+                Safety Commission to enact change with admin and UICPD.
+              </li>
+              <li class="initiative-item">
+                <strong>Expand Night Ride:</strong> Push for extended Night Ride
+                service times and coverage for late-night transit.
+              </li>
+              <li class="initiative-item">
+                <strong>Enhance campus lighting:</strong> Upgrade and expand
+                lighting across walkways, parking lots, and common areas.
+              </li>
+              <li class="initiative-item">
+                <strong>Mental health services:</strong> Continue improving
+                service capacity with tailored solutions for all students.
+              </li>
+              <li class="initiative-item">
+                <strong>Healthy food options:</strong> Provide cost and
+                dietary-friendly food options on and around campus.
+              </li>
+              <li class="initiative-item">
+                <strong>Digitize your I-Card:</strong> Advocate for digital
+                mobile I-Card and secure swipe access for buildings.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Forging Student Success -->
+      <div class="platform-item row">
+        <div class="col-lg-5">
+          <img
+            src="Screenshot 2025-04-08 at 4.26.51 AM.png"
+            alt="Forging Student Success"
+            class="platform-image"
+          />
+        </div>
+        <div class="col-lg-7 d-flex flex-column justify-content-center">
+          <div class="platform-content">
+            <h3 class="platform-title">Forging Student Success</h3>
+            <p class="platform-description">
+              Ensuring every student has the resources to excel academically and professionally
+            </p>
+            <ul class="list-unstyled">
+              <li class="initiative-item">
+                <strong>Interview meeting rooms:</strong> Provide quiet, private
+                booths for virtual meetings.
+              </li>
+              <li class="initiative-item">
+                <strong>Improve campus Wi-Fi:</strong> Advocate for stronger,
+                more reliable connectivity in all buildings.
+              </li>
+              <li class="initiative-item">
+                <strong>Professional development:</strong> Offer skill-building
+                workshops, networking events, free headshots, and resume
+                reviews.
+              </li>
+              <li class="initiative-item">
+                <strong>Enhanced advising & tutoring:</strong> Expand resources
+                to ensure exceptional academic and career guidance for every
+                major.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Elevating Campus Life -->
+      <div class="platform-item row">
+        <div class="col-lg-5 order-lg-2">
+          <img
+            src="Screenshot 2025-04-08 at 4.25.26 AM.png"
+            alt="Elevating Campus Life"
+            class="platform-image"
+          />
+        </div>
+        <div class="col-lg-7 d-flex flex-column justify-content-center order-lg-1">
+          <div class="platform-content">
+            <h3 class="platform-title">Elevating Campus Life</h3>
+            <p class="platform-description">
+              Building a vibrant, engaged, and spirited community at UIC
+            </p>
+            <ul class="list-unstyled">
+              <li class="initiative-item">
+                <strong>Support & fund student orgs:</strong> Streamline SAFC
+                funding processes and support campus events.
+              </li>
+              <li class="initiative-item">
+                <strong>Develop UIC’s spirit:</strong> Promote athletics with
+                tailgates, giveaways, and athlete-student interactions.
+              </li>
+              <li class="initiative-item">
+                <strong>Frequent free events:</strong> Organize free food days,
+                bowling nights, and activities to unite the community.
+              </li>
+              <li class="initiative-item">
+                <strong>Activate our Chicago network:</strong> Expand
+                partnerships with local firms, events, and alumni to enrich
+                campus life.
+              </li>
+              <li class="initiative-item">
+                <strong>Improve public spaces:</strong> Transform underutilized
+                areas into lounges and social spaces for students.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-container">
+        <h2 class="contact-title">Contact Us</h2>
+        <p>
+          Have questions or suggestions? Reach out to us on social media on instagram. We'd love to hear from you.
+        </p>
+        <div class="social-links">
+            <p>
+                Reach out to us on @elevate.uic!
+              </p>
+          
+        </div>
+        <p class="copyright">
+          &copy; 2025 Elevate UIC. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top">
+    <i class="fas fa-angle-up"></i>
+  </div>
+
+  <!-- Bootstrap 5 JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
+
+  <script>
+    // Show/Hide Back to Top Button
+    const backToTopButton = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = 'flex';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+
+    // Scroll to top on button click
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>
